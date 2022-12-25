@@ -1,0 +1,4 @@
+.env
+hiddenCommands.ts
+node_modules
+Handlers/.env
