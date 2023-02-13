@@ -1,0 +1,11 @@
+{
+  "Peeps_Commands_Embed_Color": "0x0a43bb",
+  "Help_Commands_Embed_Color": "0x06c5f0",
+  "Developer_Commands_Embed_Color": "0x1f06a7",
+  "Bot_Commands_Embed_Color": "0xffe000",
+  "Misc_Commands_Embed_Color": "0xffffff",
+
+  "ERROR_Embed_Color": "0xff0000",
+  "WARNING_Embed_Color": "0xffd800",
+  "SUCCESS_Embed_Color": "0x51e24a"
+}

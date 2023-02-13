@@ -4,6 +4,8 @@ module.exports = {
   once: true,
 
   execute(client) {
-    console.log('[BOT]: ThePeepsBOT is ALIVE!!!');
+
+    console.log(`[DISCORD]: Logged in as "${client.user.tag}".`);
+
   }
 };

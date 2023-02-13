@@ -1,62 +1,57 @@
 require('dotenv').config();
 const Discord = require('discord.js');
-const { Client, Events, GatewayIntentBits, Collection, ActivityType } = require('discord.js');
+const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
 const { slashCommandHandler } = require('./Handlers/slashCommands.hlr')
 
 const path = require('path');
 const fs = require('fs');
 
 
+
 const client = new Client({
   intents: [
 
-    GatewayIntentBits.Guilds, // guild
+    GatewayIntentBits.Guilds, // Guilds
 
-    GatewayIntentBits.GuildMembers, // guild members
+    GatewayIntentBits.GuildMembers, // Guild Members
 
-    // GatewayIntentBits.GuildBans, // guild bans
+    // GatewayIntentBits.GuildBans, // Guild Bans
     
-    //  GatewayIntentBits.GuildEmojisAndStickers, // emojis and stickers
+    // GatewayIntentBits.GuildEmojisAndStickers, // Emoji(s) and Sticker(s)
     
-    GatewayIntentBits.GuildIntegrations, // discord Integrations
+    GatewayIntentBits.GuildIntegrations, // Discord & Guild Integration(s)
     
-    // GatewayIntentBits.GuildWebhooks, // discord webhooks
+    // GatewayIntentBits.GuildWebhooks, // Discord & Guild Webhook(s)
     
-    //  GatewayIntentBits.GuildInvites, // guild invites
+    // GatewayIntentBits.GuildInvites, // Guild Invites
     
-    // GatewayIntentBits.GuildVoiceStates, // voice
+    // GatewayIntentBits.GuildVoiceStates, // Voice
     
-    // GatewayIntentBits.GuildPresences, // user presence
+    // GatewayIntentBits.GuildPresences, // Guild Member Presence
     
-    GatewayIntentBits.GuildMessages, //guild messages
+    GatewayIntentBits.GuildMessages, // Guild Messages
     
-    GatewayIntentBits.GuildMessageReactions, // message reactions
+    GatewayIntentBits.GuildMessageReactions, // Message Reaction(s)
     
-    GatewayIntentBits.GuildMessageTyping, // message typing
+    GatewayIntentBits.GuildMessageTyping, // Message Typing
     
-    GatewayIntentBits.DirectMessages, // dm messages
+    GatewayIntentBits.DirectMessages, // Direct BOT Message(s)
     
-    GatewayIntentBits.DirectMessageReactions, // dm message reaction
+    GatewayIntentBits.DirectMessageReactions, // Direct BOT Message Reaction(s)
     
-    // GatewayIntentBits.DirectMessageTyping, // dm message typing
+    // GatewayIntentBits.DirectMessageTyping, // Direct BOT Message Typing
     
-    GatewayIntentBits.MessageContent, // message content
+    GatewayIntentBits.MessageContent, // Message Content
     
   ]
 });
 
 
 
+
 client.commands = new Collection();
 
-const commandsPath = path.join(__dirname, 'Commands');
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js') || file.endsWith('.ts'));
 
-for (const file of commandFiles) {
-	const filePath = path.join(commandsPath, file);
-	const command = require(filePath);
-	client.commands.set(command.data.name, command);
-}
 
 
 const eventsPath = path.join(__dirname, 'Events');
@@ -65,25 +60,18 @@ const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.ts'
 for (const file of eventFiles) {
 	const filePath = path.join(eventsPath, file);
 	const event = require(filePath);
+  
 	if (event.once) {
+
 		client.once(event.name, (...args) => event.execute(...args));
-	} else {
-		client.on(event.name, (...args) => event.execute(...args));
+
 	}
-}
+  else {
 
-
-client.once('ready', () => {
-
-  client.user.setPresence({
-    activities: [{
-      name: '"The Discord Bot that was doomed to fail from the start"',
-      type: ActivityType.Watching
-    }],
-    status: 'online',
-  })
-});
-
+		client.on(event.name, (...args) => event.execute(...args));
+    
+	}
+};
 
 
 
