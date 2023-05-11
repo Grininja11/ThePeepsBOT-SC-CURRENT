@@ -1,0 +1,61 @@
+Version: BETA V0.0.3-PB
+Date of Dev Version: 02/27/2023
+Date of Post: 05/10/2023
+
+
+New Commands:
+- /version (Usage: '/version') Lists the Current Version on File, also includes a Legend of Different Build Versions it can have.
+- /kick (Usage: '/kick[USER] [REASON(?)]') Kicks a Member from the Guild.
+- /ban (Usage: '/ban[USER] [REASON(?)]') Bans a Member from the Guild.
+- /ids (Usage: '/ids') Posts a list of all relevant ID's Hardcoded.
+
+
+Removed Commands:
+- N/A
+
+
+Bug Fixes:
+- N/A
+
+
+Rearaged:
+- Moved all Folders & Files to "SRC" Folder within Root.
+- Moved Commands into different Folders that more correspond to said Folder.
+
+
+Additions:
+- Added more Folders within "Commands" Folder for better organization.
+- Added "Client" Folder to hold Client build setup. (EA: Presence set)
+- Added "AutoMod" Folder for prebuild Auto-Mod functions.
+- Added "PatchNotes-LOGS" Folder to hold past PatchNotes located within Directory Root.
+- Added a Read Me. (README.md)
+- Added "client.hlr.ts" and "event.hlr.ts" to "Handlers" folder. (PATH: './SRC/Handlers' + See QoL)
+- Added "DefaultPreferences.json" as a default. (See QoL)
+
+
+Removed:
+- Removed "Database" Folder; Reason: Unused. (For now)
+- Removed ".env" From "Handlers" Folder; Reason: No longer needed within that directory.
+
+
+Command Fixes:
+- /scode (Usage: '/scode') Now lists both GitHub repositories. Both Current and Deprecated.
+- /help (Usage: '/help') Now lists more Commands.
+- /botinfo (Usage: '/botinfo') Now lists Coding languages used.
+- All Commands listing "Greninja11" has been changed to list "Sinrow".
+- All Embeded Commands now include a Title.
+
+
+QoL:
+- Additions to Console logs.
+- ".env" moved to "Config" Folder.
+- "colors.json" Is now easier to read when File surfing. (PATH: './SRC/Config/colors.json')
+- Moved all "GatewayIntentBits" values to a TS file within "Config".
+- Moved "client" and "events" code from 'index.js' in favor of having it in it's own file.
+- Plan on using MongoDB to store your local Guild preferences.
+
+
+Comments:
+Still in DEV mode, not yet ready for the public, but getting close!
+
+-Sinrow

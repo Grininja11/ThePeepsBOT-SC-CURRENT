@@ -1,9 +1,10 @@
 {
   "name": "thepeepsbot",
   "version": "1.0.0",
-  "description": "bot for thepeeps made by greninja11",
-  "main": "index.js",
+  "description": "bot for thepeeps made by sinrow",
+  "main": "./SRC/index.js",
   "dependencies": {
+    "@discordjs/voice": "^0.14.0",
     "busboy": "^1.6.0",
     "discord-api-types": "^0.37.22",
     "discord.js": "^14.7.1",
@@ -16,6 +17,7 @@
     "lodash.snakecase": "^4.1.1",
     "mongodb": "^4.12.1",
     "peek-readable": "^5.0.0",
+    "play-dl": "^1.9.6",
     "readable-stream": "^3.6.0",
     "readable-web-to-node-stream": "^3.0.2",
     "reflect-metadata": "^0.1.13",
@@ -33,6 +35,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Greninja11",
+  "author": "Sinrow",
   "license": "ISC"
 }
